@@ -44,7 +44,7 @@ const Header = ({ activeSection, toggleTheme, theme }) => {
                   <a
                     key={item.id}
                     href={item.href}
-                    className={`relative text-[14px] font-medium py-1 transition-colors duration-300
+                    className={`relative text-[14px] font-medium py-1  transition-colors duration-300
                       ${activeSection === item.id ? 'text-primary' : 'text-textSecondary hover:text-primary'}
                       after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 hover:after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300
                       ${activeSection === item.id ? 'after:w-full' : ''}

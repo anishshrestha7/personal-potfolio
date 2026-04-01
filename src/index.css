@@ -49,6 +49,9 @@
     @apply text-primary;
   }
   .btn-primary {
+    @apply bg-primary text-white px-7 py-3 rounded-md font-semibold text-[15px] transition-colors hover:bg-(--bg-primary-color) hover:[color:var(--primary-color)] hover:border-[var(--primary-color)] border-1 border-[var(--primary-color)] block text-center;
+  }
+  .btn-primary1 {
     @apply bg-primary text-white px-7 py-3 rounded-md font-semibold text-[15px] transition-colors hover:opacity-90 block text-center;
   }
   .btn-secondary {
@@ -60,4 +63,63 @@
     background-color: var(--primary-color);
     color: white;
   }
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-cursor-hover {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  opacity: 0.2 !important;
+  border-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor-dot,
+  .custom-cursor-circle {
+    display: none !important;
+  }
+}
+
+@keyframes jelly {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.hero-jelly-shape {
+  animation: jelly 8s ease-in-out infinite;
 }
